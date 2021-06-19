@@ -13,6 +13,8 @@
   - [Create new compoment with constant](#create-new-compoment-with-constant)
   - [Create new component with function](#create-new-component-with-function)
   - [Create new component with class](#create-new-component-with-class)
+  - [Class vs Function](#class-vs-function)
+  - [Understand React Design](#understand-react-design)
   
 ## Install react global tools 
 npm: Node Package Manager
@@ -150,4 +152,54 @@ class Car extends React.Component {
     }
   }
 ReactDOM.render(<Car brand="Ford"/>, document.getElementById('root'));
+```
+
+## Class vs Function
+```mermaid
+graph TB
+A["index.js<br>ReactDOM.render()"]
+B[page component]
+C[function: return component]
+D("class: render() function<br>return component")
+E[index.html<br><div id='root'>]
+
+B--export to-->A
+C-->B
+D-->B
+A--inject to-->E
+
+classDef rect1 fill:#F46624,stroke:#F46624,stroke-width:4px,color:white;
+classDef rect2 fill:yellow,stroke:#DE9E1F,stroke-width:2px;
+class A,B,C,D rect2
+class E rect1
+```
+## Understand React Design
+```mermaid
+graph TB
+A[props<br>brand='Ford']
+B[Component]
+C["fa:fa-compass Functional<br>func(props)"]
+D["fa:fa-copyright class <br>constructor(props)"]
+E["useState:[variable,setter]<br>useEffect(()->{},[])"]
+F["Life Cycle<br>
+constructor(props)<br>
+getDerivedStateFromProps()<br>
+render()<br>
+componentWillUnmount()<br>
+componentDidMount()<br>
+getSnapshotBeforeUpdate()<br>
+shouldComponentUpdate()<br>
+componentDidUpdate()<br>
+"]
+
+A--pass through attribute-->B
+B-->C & D
+C-->E
+D-->F
+classDef html fill:#F46624,stroke:#F46624,stroke-width:4px,color:white;
+classDef js fill:yellow,stroke:#DE9E1F,stroke-width:2px;
+classDef start fill:green,stroke:#DE9E1F,stroke-width:2px;
+classDef end1 fill:red,stroke:#DE9E1F,stroke-width:2px;
+class A start
+class B,C,D js
 ```
