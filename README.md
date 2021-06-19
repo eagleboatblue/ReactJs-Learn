@@ -1,6 +1,5 @@
 # Learning ReactJS from Screatch
-⚡️📄🖊📝✔️❌❓❗️📌🔨💡☝️👉👇👈👍👎👌💾🗑🐛📒⚠️😄😢♻️🔥🛠📐🎯✉️☎️
-
+[Shared copy/paste](doc/myIcons.md)
 - [Learning ReactJS from Screatch](#learning-reactjs-from-screatch)
   - [Install react global tools](#install-react-global-tools)
   - [Create a new project](#create-a-new-project)
@@ -138,7 +137,7 @@ ReactDOM.render(myFunc(), document.getElementById('root'));
 ```
 
 ## Create new component with class
-* modify [index.js](myreact/src/index.js)
+* ⚠️ modify [index.js](myreact/src/index.js)
 ```js
 class Car extends React.Component {
     constructor() {
